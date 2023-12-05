@@ -8,10 +8,9 @@ const Page = ({ title, para, icon, color }) => {
     } else {
       setIsImage(true)
     }
-  }, [])
+  }, [icon])
   return (
     <>
-
       <div className='container flex' style={{ backgroundColor: color }}>
         <div className='content-div'>
           {isImage ? "" : <img src={icon} alt="icon" width={100} />}

@@ -46,11 +46,11 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   backdrop-filter: blur(50px);
   display: flex;
-  /* ---------------------- */
   scroll-snap-align: start;
   justify-self: center;
   align-items: center;
   flex: none;
+  backdrop-filter: blur(40px);
 }
 .content-div {
   width: 56.4375rem;
@@ -97,8 +97,9 @@ h2 {
   right: 0;
   left: 0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(25px) saturate(150%);
+  -webkit-backdrop-filter: blur(25px) saturate(150%);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .nav > div > img {
   cursor: pointer;

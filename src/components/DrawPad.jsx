@@ -9,6 +9,7 @@ const DrawPad = () => {
     const [prevY, setPrevY] = useState(null);
     const [draw, setDraw] = useState(false);
     const [selectedColor, setSelectedColor] = useState('#FFD600');
+    const [clearTimeoutId, setClearTimeoutId] = useState(null);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -29,6 +30,7 @@ const DrawPad = () => {
             ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
         }
     };
+
     const handleSaveImage = () => {
         if (ctx) {
             const dataUrl = canvasRef.current.toDataURL('img/png');
@@ -41,9 +43,17 @@ const DrawPad = () => {
 
     const handleMouseDown = () => {
         setDraw(true);
+        if (clearTimeoutId) {
+            clearTimeout(clearTimeoutId);
+        }
     };
     const handleMouseUp = () => {
         setDraw(false);
+        const timeoutId = setTimeout(() => {
+            handleClearCanvas();
+        }, 3000);
+
+        setClearTimeoutId(timeoutId);
     };
     const handleMouseMove = (e) => {
         if (!ctx || !draw) {

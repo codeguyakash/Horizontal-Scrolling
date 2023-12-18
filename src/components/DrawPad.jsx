@@ -45,7 +45,7 @@ const DrawPad = () => {
         setDraw(true);
         if (clearTimeoutId) {
             clearTimeout(clearTimeoutId);
-        }
+          }
     };
     const handleMouseUp = () => {
         setDraw(false);

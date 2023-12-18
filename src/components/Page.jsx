@@ -3,14 +3,13 @@ import React, { useEffect, useState } from 'react'
 
 const Page = ({ title, para, icon, bgColor, textColor, trianglearrow }) => {
   const [isImage, setIsImage] = useState(true)
-  console.log(textColor)
-  useEffect(() => {
+    useEffect(() => {
     if (icon && trianglearrow) {
       setIsImage(false)
     } else {
       setIsImage(true)
     }
-  }, [icon])
+  }, [icon,trianglearrow])
   return (
     <>
 

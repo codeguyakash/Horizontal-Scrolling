@@ -39,21 +39,25 @@ body::-webkit-scrollbar-thumb {
 }
 .main-container {
   display: flex;
-  overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(50px);
 }
 .container {
   width: 100%;
-  height: 100vh;
+  height: 98vh;
   backdrop-filter: blur(50px);
   display: flex;
   scroll-snap-align: start;
+  scroll-snap-type: x mandatory;
   justify-self: center;
   align-items: center;
   flex: none;
   backdrop-filter: blur(40px);
+  transition: all;
 }
 .content-div {
   width: 56.4375rem;
@@ -84,7 +88,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: start;
+  flex: start;
   gap: 10px;
 }
 
@@ -159,6 +163,9 @@ h3 {
 
   /* position: fixed; */
 }
+.draw-icon {
+  width: 2.2rem;
+}
 #scroll-btn {
   padding-top: 3rem;
   background-color: black;
@@ -173,6 +180,35 @@ h3 {
   font-weight: 600;
   text-align: center;
   cursor: pointer;
+}
+
+canvas {
+  width: 95vw;
+  height: 85vh;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background-color: white;
+  margin: 1.5rem auto;
+  display: block;
+}
+.canvas-div {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.3rem;
+}
+.canvas-btn {
+  cursor: pointer;
+  margin: 0rem .5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+.color-input {
+  width: 6rem;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  height: 2.7rem;
+  border-radius: 5px;
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
   .nav {
